@@ -1,35 +1,29 @@
-// Model.js
-import React, { useRef } from 'react';
-import { useFrame } from 'react-three-fiber';
-import { BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
-
-const Model = ({ type }) => {
-  const mesh = useRef();
-
-  useFrame(() => {
-    if (mesh.current) {
-      // Rotate the model
-      mesh.current.rotation.x += 0.01;
-      mesh.current.rotation.y += 0.01;
-    }
-  });
-
-  const renderModel = () => {
-    switch (type) {
-      case 'docker':
-        return <boxGeometry args={[1, 1, 1]} />;
-      case 'go':
-        return <boxGeometry args={[1.5, 1.5, 1.5]} />;
-      default:
-        return null;
-    }
-  };
+import { OrbitControls } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useRef, useState } from 'react'
+const Model = () => {
+  const Box = (props) => {
+    const ref=useRef()
+    useFrame((state, delta) => {
+      ref.current.rotation.x+=delta
+      // ref.current.rotation.y+=delta*2.0
+      // ref.current.position.z=Math.sin(state.clock.elapsedTime)
+    })
+    return (
+      <mesh position={props.position} ref={ref} >
+        <boxGeometry args={props.size} />
+        <meshStandardMaterial  color={props.color}/>
+      </mesh>
+    )
+  }
 
   return (
-    <mesh ref={mesh}>
-      {renderModel()}
-      <meshBasicMaterial color={0x00ff00} wireframe />
-    </mesh>
+    <Canvas>
+      <directionalLight position={[0, 0, 1]} intensity={2} />
+      <ambientLight intensity={2}/>
+      <Box position={[0, 0, 0]} size={[2, 2, 2]} color={'red'} />
+      <OrbitControls />
+    </Canvas>
   );
 };
 
