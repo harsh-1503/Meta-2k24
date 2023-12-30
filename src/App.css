@@ -46,6 +46,13 @@
   margin: 0;
   padding: 0;
 }
-body{
+/* body{
   background: black;
+} */
+body{
+  background-color: black;
 }
+/* body{
+  background: url('https://wallpapercave.com/wp/VDiHru3.jpg');
+  background-size: cover;
+} */

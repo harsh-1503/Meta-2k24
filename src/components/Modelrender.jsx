@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { useRef } from 'react'
-import { OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF, Stars } from '@react-three/drei'
 import { Suspense } from 'react'
 
 function Shoe({ ...props }) {
@@ -82,6 +82,7 @@ function Docker({...props}) {
 function Stage({...props}) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/neon_stage.glb')
+  
   return (
     <group ref={group}{...props} dispose={null}>
       <group scale={0.01}>
@@ -91,7 +92,7 @@ function Stage({...props}) {
         </group>
         <mesh geometry={nodes.Plane_Material_0.geometry} material={materials.Material} position={[76.675, 0, -166.309]} rotation={[-Math.PI / 2, 0, 0]} scale={[135.952, 146.829, 127.587]} />
         <mesh geometry={nodes.Torus_Material003_0.geometry} material={materials['Material.003']} position={[80.452, 226.188, -574.022]} scale={174.621} />
-        <mesh geometry={nodes.Sphere_Material004_0.geometry} material={materials['Material.004']} position={[95.951, 485.54, -756.858]} rotation={[-Math.PI / 2, 0, -0.279]} scale={4761.809} />
+        {/* <mesh geometry={nodes.Sphere_Material004_0.geometry} material={materials['Material.004']} position={[95.951, 485.54, 600.858]} rotation={[-Math.PI / 2, 0, -0.279]} scale={2000.809} /> */}
       </group>
     </group>
   )
@@ -101,6 +102,9 @@ const Modelrender = () => {
     <Canvas>
       <Suspense>
         <ambientLight  intensity={6}/>
+      <Stars radius={100} depth={50} count={1000} factor={4} saturation={0} fade speed={1} color={"orange"} />
+      <color attach="background" args={['black']} />
+
         {/* <Gopher /> 
         <Shoe /> 
         <Docker/>  */}
