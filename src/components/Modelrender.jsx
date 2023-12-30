@@ -92,7 +92,7 @@ function Stage({...props}) {
         </group>
         <mesh geometry={nodes.Plane_Material_0.geometry} material={materials.Material} position={[76.675, 0, -166.309]} rotation={[-Math.PI / 2, 0, 0]} scale={[135.952, 146.829, 127.587]} />
         <mesh geometry={nodes.Torus_Material003_0.geometry} material={materials['Material.003']} position={[80.452, 226.188, -574.022]} scale={174.621} />
-        {/* <mesh geometry={nodes.Sphere_Material004_0.geometry} material={materials['Material.004']} position={[95.951, 485.54, 600.858]} rotation={[-Math.PI / 2, 0, -0.279]} scale={2000.809} /> */}
+        <mesh geometry={nodes.Sphere_Material004_0.geometry} material={materials['Material.004']} position={[95.951, 485.54, 600.858]} rotation={[-Math.PI / 2, 0, -0.279]} scale={2000.809} />
       </group>
     </group>
   )
