@@ -1,0 +1,49 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background: linear-gradient(to top, #342E66,#343066,#353067,#353067,#1C0C24);;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #535bf2;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    min-width: 320px;
+    height: 100vh;
+    background-image: url('./src/assets/images/background.png');
+    background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+  }
+  body::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%; 
+    background: linear-gradient(to bottom,rgba(28,12,36,0),
+    rgba(28,12,36,0.7)
+    );
+  }
+  
+  

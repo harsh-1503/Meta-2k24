@@ -10,7 +10,7 @@ const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   background-color: rgba(36, 36, 36, 0);
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
   padding: 10px;
@@ -33,7 +33,7 @@ const NavLink = styled(Link)`
 
   &.active {
     font-size: 60px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
     margin: 0 15px;
   }
 
